@@ -60,7 +60,7 @@ func StartApplication() {
 		log.Fatal(err)
 	}
 	info := warehouse.Log.NewLogInfo()
-	info.Message = "Connected to database"
+	info.Message = "Connected to database " + os.Getenv("DB_SCHEMA")
 	info.StatusCode = 200
 	info.Print()
 
