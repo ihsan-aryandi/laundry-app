@@ -29,6 +29,11 @@ func StartApplication() {
 	/*
 		Read env
 	*/
+	mydir, err := os.Getwd()
+    if err != nil {
+        fmt.Println(err)
+    }
+    fmt.Println(mydir)
 	err = envReader.ReadEnv()
 	if err != nil {
 		log.Fatal(err)

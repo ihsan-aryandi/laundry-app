@@ -5,10 +5,10 @@ import (
 	"github.com/gobuffalo/packr/v2"
 	_ "github.com/lib/pq"
 	migrate "github.com/rubenv/sql-migrate"
+	"laundry/util"
 	"log"
 	"os"
 	"path/filepath"
-	"laundry/util"
 )
 
 type database struct{}
