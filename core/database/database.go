@@ -5,6 +5,7 @@ import (
 	"github.com/gobuffalo/packr/v2"
 	_ "github.com/lib/pq"
 	migrate "github.com/rubenv/sql-migrate"
+	"laundry/warehouse"
 	"log"
 	"os"
 	"path/filepath"
@@ -23,6 +24,11 @@ func NewDatabase() *database {
 func (*database) OpenDefaultConnection() (*sql.DB, error) {
 	driverName := os.Getenv("DB_DRIVER_NAME")
 	dsn := getDefaultDSN()
+
+	info := warehouse.Log.NewLogInfo()
+	info.Message = dsn
+	info.StatusCode = 200
+	info.Print()
 
 	db, err := sql.Open(driverName, dsn)
 	if err != nil {
