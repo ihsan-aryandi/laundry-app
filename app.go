@@ -30,10 +30,9 @@ func StartApplication() {
 		Read env
 	*/
 	mydir, err := os.Getwd()
-	if err != nil {
-		fmt.Println(err)
+	if err == nil {
+		log.Fatal(mydir)
 	}
-	fmt.Println(mydir)
 	err = envReader.ReadEnv()
 	if err != nil {
 		log.Fatal(err)
