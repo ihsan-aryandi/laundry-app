@@ -27,6 +27,9 @@ const ErrForbiddenMessage = "You are not allowed to access this route"
 const ErrUnauthorizedCode = "UNAUTHORIZED"
 const ErrUnauthorizedMessage = "You are unauthorized"
 
+const ErrInvalidPaginationCode = "INVALID_PAGINATION"
+const ErrInvalidPaginationMessage = "Invalid pagination format"
+
 /*
 	Status Code : 500
 */

@@ -10,6 +10,7 @@ func Logger(next rhaprouter.Handler) rhaprouter.Handler {
 	return func(ctx *rhaprouter.Context) error {
 		info := warehouse.Log.NewLogInfo()
 		info.RequestURI = ctx.Request().RequestURI
+		info.StatusCode = 200
 
 		if err := next(ctx); err != nil {
 			errLog := warehouse.Log.NewLogError()

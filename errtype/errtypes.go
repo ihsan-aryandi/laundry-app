@@ -84,6 +84,15 @@ func UnauthorizedError(err error) *Error {
 	}
 }
 
+func InvalidPaginationError(err error) *Error {
+	return &Error{
+		Code:       constant.ErrInvalidPaginationCode,
+		StatusCode: 400,
+		Message:    constant.ErrInvalidPaginationMessage,
+		Error:      err,
+	}
+}
+
 /*
 	Status Code : 500
 */
