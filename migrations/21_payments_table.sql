@@ -4,8 +4,8 @@
 CREATE TABLE IF NOT EXISTS payments (
     id                    BIGSERIAL NOT NULL,
     order_id              BIGINT NOT NULL,
-    total                 BIGINT NOT NULL,
-    is_paid               BOOL NOT NULL DEFAULT false;
+    total                 INT NOT NULL DEFAULT 0,
+    is_paid               BOOL NOT NULL DEFAULT false,
     paid_at               TIMESTAMP WITHOUT TIME ZONE NULL,
     created_at            TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     created_by            BIGINT,
