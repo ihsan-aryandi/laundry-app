@@ -8,20 +8,10 @@ github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc/go.mod h1:LOuy
 github.com/alecthomas/units v0.0.0-20151022065526-2efee857e7cf/go.mod h1:ybxpYRFXyAe+OPACYpWeL0wqObRcbAqCMya13uyzqw0=
 github.com/armon/consul-api v0.0.0-20180202201655-eb2c6b5be1b6/go.mod h1:grANhF5doyWs3UAsr3K4I6qtAmlQcZDesFNEHPZAzj8=
 github.com/armon/go-radix v0.0.0-20180808171621-7fddfc383310/go.mod h1:ufUuZ+zHj4x4TnLV4JWEpy2hxWSpsRywHrMgIH9cCH8=
-github.com/bandungrhapsody/rhaplogger v1.0.0 h1:oRcRniyZcxrub7Mxn3jJFOktXGwSR2jO9cg6ScvYChw=
-github.com/bandungrhapsody/rhaplogger v1.0.0/go.mod h1:rlBVxTsR6kIA4i7e6EM99oB1yjZXBJIUOQFkPIYzfD0=
-github.com/bandungrhapsody/rhaplogger v1.0.1 h1:kDg7FiEFrmILLlDInuwWGZA21hBrCpkAB16RtCSEkyA=
-github.com/bandungrhapsody/rhaplogger v1.0.1/go.mod h1:rlBVxTsR6kIA4i7e6EM99oB1yjZXBJIUOQFkPIYzfD0=
 github.com/bandungrhapsody/rhaplogger v1.0.2 h1:AqnwgEa1U39lSzlxFqc5ivb+UH83XvKW6mFhzmHC7uc=
 github.com/bandungrhapsody/rhaplogger v1.0.2/go.mod h1:rlBVxTsR6kIA4i7e6EM99oB1yjZXBJIUOQFkPIYzfD0=
-github.com/bandungrhapsody/rhaprouter v1.0.3 h1:fF/3LRanaDxfGJi1uLefHOzBvD4Aoq/Wy47C5rhcHI0=
-github.com/bandungrhapsody/rhaprouter v1.0.3/go.mod h1:EmGOrLzV8THr+6chlDT5kpUpSN4f2C6I9cl5oNR9qyk=
-github.com/bandungrhapsody/rhaprouter v1.0.4 h1:Wbtk7JWVkgokc4tlcZPOpOOtV/UFNlzPvpefomGKIvE=
-github.com/bandungrhapsody/rhaprouter v1.0.4/go.mod h1:EmGOrLzV8THr+6chlDT5kpUpSN4f2C6I9cl5oNR9qyk=
 github.com/bandungrhapsody/rhaprouter v1.0.5 h1:BKtkiwZru6O4eU089PYhyub+WDsxK1lDBpkRjt+1XvM=
 github.com/bandungrhapsody/rhaprouter v1.0.5/go.mod h1:EmGOrLzV8THr+6chlDT5kpUpSN4f2C6I9cl5oNR9qyk=
-github.com/bandungrhapsody/rhapvalidator v1.0.0 h1:IV0/16/7jz50rU7lehd8Q5xkWMPwGgoKTOBvzcYPZR0=
-github.com/bandungrhapsody/rhapvalidator v1.0.0/go.mod h1:vJP6B9Ka1P1s/9KqqsQCy0n9PMuXFxx2S3mPvfS8xeQ=
 github.com/bandungrhapsody/rhapvalidator v1.0.1 h1:6pRWQdeRdvqivvqdfTf/Cpv837kLJXHkaKb1l8oH0VY=
 github.com/bandungrhapsody/rhapvalidator v1.0.1/go.mod h1:vJP6B9Ka1P1s/9KqqsQCy0n9PMuXFxx2S3mPvfS8xeQ=
 github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973/go.mod h1:Dwedo/Wpr24TaqPxmxbtue+5NUziq4I4S80YR8gNf3Q=
@@ -180,7 +170,6 @@ golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACk
 golang.org/x/crypto v0.0.0-20190325154230-a5d413f7728c/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
 golang.org/x/crypto v0.0.0-20191122220453-ac88ee75c92c/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
-golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a h1:vclmkQCjlDX5OydZ9wv8rBCcS0QyQY66Mpf/7BZbInM=
 golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
 golang.org/x/crypto v0.0.0-20210817164053-32db794688a5 h1:HWj/xjIHfjYU5nVXpTM0s39J9CbLn7Cc5a7IC5rwsMQ=
 golang.org/x/crypto v0.0.0-20210817164053-32db794688a5/go.mod h1:GvvjBRRGRdwPK5ydBHafDWAxML/pGHZbMvKqRZ5+Abc=
@@ -209,7 +198,6 @@ golang.org/x/sys v0.0.0-20181107165924-66b7b1311ac8/go.mod h1:STP8DvDyc/dI5b8T5h
 golang.org/x/sys v0.0.0-20181116152217-5ac8a444bdc5/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
 golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
 golang.org/x/sys v0.0.0-20190412213103-97732733099d/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
-golang.org/x/sys v0.0.0-20190422165155-953cdadca894 h1:Cz4ceDQGXuKRnVBDTS23GTn/pU5OE2C0WrNTOYK1Uuc=
 golang.org/x/sys v0.0.0-20190422165155-953cdadca894/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20201119102817-f84b799fce68/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20210615035016-665e8c7367d1 h1:SrN+KX8Art/Sf4HNj6Zcz06G7VEz+7w9tdXTPOZ7+l4=
