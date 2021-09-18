@@ -4,7 +4,6 @@
 CREATE TABLE IF NOT EXISTS registration_links
 (
     id         BIGSERIAL NOT NULL,
-    link       VARCHAR(256),
     code       VARCHAR(256),
     expired_at TIMESTAMP WITHOUT TIME ZONE,
     type       VARCHAR(50),

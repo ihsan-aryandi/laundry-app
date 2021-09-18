@@ -16,4 +16,4 @@ CREATE TABLE IF NOT EXISTS customers (
 -- +migrate StatementEnd
 -- +migrate Down
 
-DROP TABLE IF EXISTS answers;
+DROP TABLE IF EXISTS customers;
