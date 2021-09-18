@@ -1,1 +1,0 @@
-{"level":"ERROR","timestamp":"2021-09-11T18:17:37.5813068+07:00","request_uri":"-","status_code":500,"duration":0,"message":"pq: password authentication failed for user \"user\"","version":"-","error_code":"-"}
