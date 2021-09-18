@@ -93,6 +93,15 @@ func InvalidPaginationError(err error) *Error {
 	}
 }
 
+func InvalidFormatError(fieldName string, err error) *Error {
+	return &Error{
+		Code:       constant.ErrInvalidFormatCode,
+		StatusCode: 400,
+		Message:    fmt.Sprintf(constant.ErrInvalidFormatMessage, fieldName),
+		Error:      err,
+	}
+}
+
 /*
 	Status Code : 500
 */

@@ -31,7 +31,7 @@ func (u *userRepo) Register(db *sql.Tx, user entity.UserRepo) (errType *errtype.
 	}
 
 	params := []interface{} {
-		user.Username.String, user.Password.String, user.UserProfileId.Int64,
+		user.Email.String, user.Password.String, user.UserProfileId.Int64,
 		user.CreatedAt.Time, user.CreatedBy.Int64, user.UpdatedAt.Time,
 		user.UpdatedBy.Int64}
 
@@ -67,7 +67,7 @@ func (u *userRepo) FindUserByUsername(username string) (result entity.UserRepo, 
 	userProfileTable := NewUserProfileRepo().TableName
 	roleTable := NewRoleRepo().TableName
 	query := `SELECT 
-				u.id, u.username, u.password, u.user_profile_id, 
+				u.id, u.email, u.password, u.user_profile_id, 
 				r.role 
 			  FROM ` + u.TableName + ` AS u
 			  LEFT JOIN ` + userProfileTable + ` AS up
@@ -81,7 +81,7 @@ func (u *userRepo) FindUserByUsername(username string) (result entity.UserRepo, 
 
 	row := db.QueryRow(query, username)
 	err := row.Scan(
-		&result.Id, &result.Username, &result.Password, &result.UserProfileId,
+		&result.Id, &result.Email, &result.Password, &result.UserProfileId,
 		&result.Role)
 	if err != nil {
 		errType = errtype.InternalServerError(err)

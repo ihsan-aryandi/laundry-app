@@ -24,6 +24,7 @@ var (
 	authRepo = repo.NewUserRepo()
 	roleRepo = repo.NewRoleRepo()
 	userProfileRepo = repo.NewUserProfileRepo()
+	registrationLinkRepo = repo.NewRegistrationLinkRepo()
 )
 
 /*

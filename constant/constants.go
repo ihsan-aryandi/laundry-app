@@ -17,3 +17,9 @@ const DefaultUserRole = "user"
 	Authentication
 */
 const AuthorizationCookieName = "Authorization"
+
+/*
+	Registration Link
+*/
+const RegistrationLinkLaundryType = "laundry"
+const RegistrationLinkCustomerType = "customer"

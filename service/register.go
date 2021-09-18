@@ -42,7 +42,7 @@ func (as *registerSvc) registerUser(tx *sql.Tx, user entity.UserBody, now time.T
 
 	data := entity.UserRepo{
 		UserProfileId: sql.NullInt64{Int64: user.UserProfileId},
-		Username:      sql.NullString{String: user.Username},
+		Email:         sql.NullString{String: user.Email},
 		Password:      sql.NullString{String: string(hashedPassword)},
 		CreatedAt:     sql.NullTime{Time: now},
 		UpdatedAt:     sql.NullTime{Time: now},

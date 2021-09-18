@@ -19,7 +19,7 @@ const ErrUsernameIsAlreadyRegisteredCode = "USERNAME_ALREADY_REGISTERED"
 const ErrUsernameIsAlreadyRegisteredMessage = "This username is already registered"
 
 const ErrLoginCode = "LOGIN_ERROR"
-const ErrLoginMessage = "Username or password is incorrect"
+const ErrLoginMessage = "Email or password is incorrect"
 
 const ErrForbiddenCode = "FORBIDDEN"
 const ErrForbiddenMessage = "You are not allowed to access this route"
@@ -29,6 +29,9 @@ const ErrUnauthorizedMessage = "You are unauthorized"
 
 const ErrInvalidPaginationCode = "INVALID_PAGINATION"
 const ErrInvalidPaginationMessage = "Invalid pagination format"
+
+const ErrInvalidFormatCode = "INVALID_FORMAT"
+const ErrInvalidFormatMessage = "Invalid %s format"
 
 /*
 	Status Code : 500

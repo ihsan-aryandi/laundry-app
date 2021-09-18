@@ -27,7 +27,7 @@ func (ac *loginCtr) Login(ctx *rhaprouter.Context) error {
 			return
 		}
 
-		if userBody.Username == "" || userBody.Password == "" {
+		if userBody.Email == "" || userBody.Password == "" {
 			errType = errtype.LoginError(errors.New("username or password is empty"))
 			return
 		}

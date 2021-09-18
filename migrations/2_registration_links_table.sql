@@ -4,7 +4,8 @@
 CREATE TABLE IF NOT EXISTS registration_links
 (
     id         BIGSERIAL NOT NULL,
-    code       VARCHAR(256),
+    email      VARCHAR(256) NOT NULL,
+    code       uuid DEFAULT uuid_generate_v4(),
     expired_at TIMESTAMP WITHOUT TIME ZONE,
     type       VARCHAR(50),
     laundry_id BIGINT    NOT NULL,

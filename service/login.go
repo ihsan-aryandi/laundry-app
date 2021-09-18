@@ -15,7 +15,7 @@ func NewLoginSvc() *loginSvc {
 }
 
 func (as *loginSvc) Login(userBody entity.UserBody) (token string, errType *errtype.Error) {
-	user, errType := userRepo.FindUserByUsername(userBody.Username)
+	user, errType := userRepo.FindUserByUsername(userBody.Email)
 	if errType != nil {
 		if errType.Error == sql.ErrNoRows {
 			errType = errtype.LoginError(errType.Error)

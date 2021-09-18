@@ -11,7 +11,7 @@ func SetupRoutes(r *rhaprouter.Router) {
 		Routes Setup
 	*/
 	route.SetupAuth(r)
-
+	route.SetupRegistrationLink(r)
 	/*
 		Global Middleware Setup
 	*/

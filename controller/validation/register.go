@@ -23,9 +23,9 @@ func (l *registerValidation) ValidateBody(user *entity.UserBody) (results rhapva
 	}
 
 	/*
-		Username validation
+		Email validation
 	*/
-	usernameCount, errType := userRepo.GetUserCountByUsername(user.Username)
+	usernameCount, errType := userRepo.GetUserCountByUsername(user.Email)
 	if errType != nil {
 		return
 	}

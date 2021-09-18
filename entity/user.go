@@ -18,7 +18,7 @@ type User struct {
 
 type UserBody struct {
 	Name          string `json:"name" rh_label:"Name" rh_valid:"required,alpha,max=256"`
-	Username      string `json:"username" rh_label:"Username" rh_valid:"required,min=5,max=50"`
+	Email         string `json:"email" rh_label:"Email" rh_valid:"required,min=5,max=50"`
 	Password      string `json:"password" rh_label:"Password" rh_valid:"required,min=7,max=256"`
 	GenderId      int64  `json:"gender_id" rh_label:"Gender" rh_valid:"required"`
 	Address       string `json:"address" rh_label:"Gender" rh_valid:"required"`
@@ -27,7 +27,7 @@ type UserBody struct {
 
 type UserRepo struct {
 	Id            sql.NullInt64
-	Username      sql.NullString
+	Email         sql.NullString
 	Password      sql.NullString
 	UserProfileId sql.NullInt64
 	CreatedAt     sql.NullTime
