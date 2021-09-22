@@ -1,7 +1,10 @@
 package controller
 
 import (
+	"github.com/bandungrhapsody/rhaprouter"
 	"laundry/controller/validation"
+	"laundry/core/response"
+	"laundry/errtype"
 	"laundry/service"
 )
 
@@ -25,3 +28,5 @@ var (
 	*/
 	registerValidation = validation.NewRegisterValidation()
 )
+
+type Controller func(ctx *rhaprouter.Context) (res *response.APIResponse, errType *errtype.Error)

@@ -10,6 +10,8 @@ github.com/armon/consul-api v0.0.0-20180202201655-eb2c6b5be1b6/go.mod h1:grANhF5
 github.com/armon/go-radix v0.0.0-20180808171621-7fddfc383310/go.mod h1:ufUuZ+zHj4x4TnLV4JWEpy2hxWSpsRywHrMgIH9cCH8=
 github.com/bandungrhapsody/rhaplogger v1.0.2 h1:AqnwgEa1U39lSzlxFqc5ivb+UH83XvKW6mFhzmHC7uc=
 github.com/bandungrhapsody/rhaplogger v1.0.2/go.mod h1:rlBVxTsR6kIA4i7e6EM99oB1yjZXBJIUOQFkPIYzfD0=
+github.com/bandungrhapsody/rhaplogger v1.0.3 h1:WBnfBCirQH52tw2O1tPGL/Lv+wMJkonVaruseCGrkDM=
+github.com/bandungrhapsody/rhaplogger v1.0.3/go.mod h1:rlBVxTsR6kIA4i7e6EM99oB1yjZXBJIUOQFkPIYzfD0=
 github.com/bandungrhapsody/rhaprouter v1.0.5 h1:BKtkiwZru6O4eU089PYhyub+WDsxK1lDBpkRjt+1XvM=
 github.com/bandungrhapsody/rhaprouter v1.0.5/go.mod h1:EmGOrLzV8THr+6chlDT5kpUpSN4f2C6I9cl5oNR9qyk=
 github.com/bandungrhapsody/rhapvalidator v1.0.1 h1:6pRWQdeRdvqivvqdfTf/Cpv837kLJXHkaKb1l8oH0VY=

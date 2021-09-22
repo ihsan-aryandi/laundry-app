@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	"fmt"
 	"github.com/bandungrhapsody/rhaprouter"
 	"laundry/warehouse"
 	"time"
@@ -11,6 +12,7 @@ func Logger(next rhaprouter.Handler) rhaprouter.Handler {
 		info := warehouse.Log.NewLogInfo()
 		info.RequestURI = ctx.Request().RequestURI
 		info.StatusCode = 200
+		info.Method = ctx.Request().Method
 
 		if err := next(ctx); err != nil {
 			errLog := warehouse.Log.NewLogError()
@@ -21,7 +23,8 @@ func Logger(next rhaprouter.Handler) rhaprouter.Handler {
 			return err
 		}
 
-		info.Duration = time.Since(ctx.RequestTime()).Milliseconds()
+		duration := time.Since(ctx.RequestTime()).Milliseconds()
+		info.Duration = fmt.Sprintf("%vms", duration)
 		info.Print()
 
 		return nil

@@ -19,7 +19,7 @@ func (rl *registrationLinkSvc) CreateRegistrationLinkLaundry(body entity.Registr
 	/*
 		Create new transactional instance
 	*/
-	tx, now, errType := createTransactional()
+	_, now, errType := createTransactional()
 	if errType != nil {
 		return
 	}
@@ -52,4 +52,5 @@ func (rl *registrationLinkSvc) CreateRegistrationLinkLaundry(body entity.Registr
 	}
 
 	registrationLinkRepo.CreateRegistrationLink(repoData)
+	return
 }
