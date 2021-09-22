@@ -32,7 +32,6 @@ func (as *loginSvc) Login(userBody entity.UserBody) (token string, errType *errt
 
 	payload := jwttoken.JWTPayload{
 		UserId: user.UserProfileId.Int64,
-		Role:   user.Role.String,
 	}
 
 	token, err = jwttoken.NewJWTToken().GenerateToken(payload)

@@ -18,7 +18,6 @@ type JWTClaims struct {
 
 type JWTPayload struct {
 	UserId int64
-	Role   string
 }
 
 var (
@@ -38,7 +37,6 @@ func (*jwtToken) GenerateToken(payload JWTPayload) (signedToken string, err erro
 			Issuer:    os.Getenv("APP_NAME"),
 		},
 		UserId: payload.UserId,
-		Role: payload.Role,
 	}
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)

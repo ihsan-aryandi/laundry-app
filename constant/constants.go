@@ -17,6 +17,7 @@ const DefaultUserRole = "user"
 	Authentication
 */
 const AuthorizationCookieName = "Authorization"
+const UserPayloadContextName = "user_payload"
 
 /*
 	Registration Link

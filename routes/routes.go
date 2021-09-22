@@ -15,5 +15,5 @@ func SetupRoutes(r *rhaprouter.Router) {
 	/*
 		Global Middleware Setup
 	*/
-	r.Use(middleware.Recover, middleware.Logger, middleware.HandleCORS)
+	r.Use(middleware.Recover, middleware.LogRequest, middleware.HandleCORS)
 }

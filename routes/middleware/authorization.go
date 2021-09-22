@@ -2,7 +2,6 @@ package middleware
 
 import (
 	"database/sql"
-	"fmt"
 	"github.com/bandungrhapsody/rhaprouter"
 	"laundry/constant"
 	"laundry/controller"
@@ -14,7 +13,7 @@ import (
 	"laundry/warehouse"
 )
 
-func Protect(ctr controller.Controller, roles ...string) rhaprouter.Handler {
+func Allow(ctr controller.Controller, roles ...string) rhaprouter.Handler {
 	return func(ctx *rhaprouter.Context) error {
 		isMatch, errType := validateUserAndMatchRole(ctx, roles)
 		if errType != nil {
@@ -23,29 +22,16 @@ func Protect(ctr controller.Controller, roles ...string) rhaprouter.Handler {
 
 		if !isMatch {
 			errType = errtype.ForbiddenError()
-			logError(ctx, errType.StatusCode, errType.Message)
+			logError(ctx, errType)
 			return ctx.JSON(response.Error(errType))
 		}
 
-		errLog := warehouse.Log.NewLogError()
-		errLog.RequestURI = ctx.Request().RequestURI
-		errLog.StatusCode = 500
-		errLog.Timestamp = ctx.RequestTime()
-		errLog.Method = ctx.Request().Method
-
 		res, errType := ctr(ctx)
 		if errType != nil {
-			errLog.StatusCode = errType.StatusCode
-			errLog.ErrorCode = errType.Code
-			errLog.Message = errType.Message
-			if errType.Error != nil {
-				errLog.Message = fmt.Sprintf("%v (%v)", errLog.Message, errType.Error)
-			}
-			errLog.Print()
+			logError(ctx, errType)
 
 			resp := response.Error(errType)
 			resp.Info.Timestamp = ctx.RequestTime()
-
 			return ctx.JSON(resp)
 		}
 		res.Info.Timestamp = ctx.RequestTime()
@@ -53,7 +39,6 @@ func Protect(ctr controller.Controller, roles ...string) rhaprouter.Handler {
 		infoLog := warehouse.Log.NewLogInfo()
 		infoLog.Timestamp = ctx.RequestTime()
 		infoLog.RequestURI = ctx.Request().RequestURI
-		infoLog.Method = ctx.Request().Method
 		infoLog.StatusCode = res.Info.StatusCode
 		infoLog.Message = res.Info.Message
 		infoLog.Print()
@@ -88,6 +73,9 @@ func validateUserAndMatchRole(ctx *rhaprouter.Context, roles []string) (isMatch 
 	}
 
 	isMatch = matchRole(user.Role.String, roles)
+	if isMatch {
+		ctx.AddContext(constant.UserPayloadContextName, claims)
+	}
 	return
 }
 
@@ -97,10 +85,10 @@ func getUserRole(ctx *rhaprouter.Context, userId int64) (result entity.UserProfi
 	if errType != nil {
 		if errType.Error == sql.ErrNoRows {
 			errType = errtype.ForbiddenError()
-			logError(ctx, errType.StatusCode, errType.Message)
+			logError(ctx, errType)
 		}
 
-		logError(ctx, errType.StatusCode, errType.Message)
+		logError(ctx, errType)
 	}
 	return
 }
@@ -118,11 +106,22 @@ func matchRole(userRole string, allowedRoles []string) bool {
 	return false
 }
 
-func logError(ctx *rhaprouter.Context, statusCode int, message string) {
+func logError(ctx *rhaprouter.Context, errType *errtype.Error) {
 	errLog := warehouse.Log.NewLogError()
-	errLog.Message = message
-	errLog.StatusCode = statusCode
 	errLog.Timestamp = ctx.RequestTime()
 	errLog.RequestURI = ctx.Request().RequestURI
+	errLog.Method = ctx.Request().Method
+
+	if errType == nil {
+		errLog.Print()
+		return
+	}
+
+	errLog.ErrorCode = errType.Code
+	errLog.Message = errType.Message
+	errLog.StatusCode = errType.StatusCode
+	if errType.Error != nil {
+		errLog.CausedBy = errType.Error.Error()
+	}
 	errLog.Print()
 }
